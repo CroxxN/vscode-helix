@@ -32,6 +32,8 @@ export class CommandLine {
         vscode.window.activeTextEditor?.document.save();
       } else if (this.commandLineText === "wa"){
         vscode.workspace.saveAll(true);
+      }else if (this.commandLineText === "n"){
+        vscode.commands.executeCommand('workbench.action.files.newUntitledFile');
       }
       this.commandLineText = '';
       this.setText(this.commandLineText, helixState);
